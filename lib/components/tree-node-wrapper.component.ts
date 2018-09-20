@@ -6,7 +6,8 @@ import { TreeNode } from '../models/tree-node.model';
   encapsulation: ViewEncapsulation.None,
   styles: [],
   template: `
-      <div *ngIf="!templates.treeNodeWrapperTemplate" class="node-wrapper" [style.padding-left]="node.getNodePadding()">
+      <div *ngIf="!templates.treeNodeWrapperTemplate" class="node-wrapper" [style.padding-left]="node.getNodePadding()"      
+         >
         <tree-node-checkbox *ngIf="node.options.useCheckbox" [node]="node"></tree-node-checkbox>
         <tree-node-expander [node]="node"></tree-node-expander>
         <div class="node-content-wrapper"
@@ -21,7 +22,9 @@ import { TreeNode } from '../models/tree-node.model';
           (treeDropDragEnter)="node.mouseAction('dragEnter', $event)"
           [treeAllowDrop]="node.allowDrop"
           [treeDrag]="node"
-          [treeDragEnabled]="node.allowDrag()">
+          [treeDragEnabled]="node.allowDrag()"
+             role="treeitem"
+             [tabindex]="node.index === 0 ? 0 : -1">
 
           <tree-node-content [node]="node" [index]="index" [template]="templates.treeNodeTemplate">
           </tree-node-content>

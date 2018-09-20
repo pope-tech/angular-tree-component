@@ -15,6 +15,7 @@ import pick from 'lodash/pick';
       <tree-viewport #viewport>
           <div
                   class="angular-tree-component"
+                  role="tree"
                   [class.node-dragging]="treeDraggedElement.isDragging()"
                   [class.angular-tree-component-rtl]="treeModel.options.rtl">
               <tree-node-collection
