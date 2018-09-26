@@ -8,7 +8,6 @@ import { TreeNode } from '../models/tree-node.model';
   template: `
     <ng-container *mobxAutorun="{dontDetach: true}">
       <div [class.tree-children]="true"
-           role="group"
            [class.tree-children-no-padding]="node.options.levelPadding"
           *treeAnimateOpen="
             node.isExpanded;

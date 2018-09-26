@@ -22,11 +22,17 @@ import { TreeNode } from '../models/tree-node.model';
           (treeDropDragEnter)="node.mouseAction('dragEnter', $event)"
           [treeAllowDrop]="node.allowDrop"
           [treeDrag]="node"
-          [treeDragEnabled]="node.allowDrag()"
-             role="treeitem"
-             [tabindex]="node.index === 0 ? 0 : -1">
+          [treeDragEnabled]="node.allowDrag()" 
+          >
 
-          <tree-node-content [node]="node" [index]="index" [template]="templates.treeNodeTemplate">
+          <tree-node-content [node]="node" [index]="index" [template]="templates.treeNodeTemplate" 
+                             role="treeitem"
+                             [attr.aria-setsize]="node.parent.children.length"
+                             [attr.aria-posinset]="node.index + 1"
+                             [attr.aria-level]="node.level"
+                             [attr.aria-expanded]="node.hasChildren ? node.isExpanded : undefined"
+                             id="tree-node-{{ node.id }}"
+                             [tabindex]="node.index === 0 ? 0 : -1">
           </tree-node-content>
         </div>
       </div>

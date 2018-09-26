@@ -82,3 +82,12 @@ tree-root .angular-tree-component-rtl .tree-children {
 tree-node-checkbox {
   padding: 1px;
 }
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

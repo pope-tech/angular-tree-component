@@ -13,7 +13,7 @@ import { TreeModel } from '../models/tree.model';
   template: `
     <ng-container *mobxAutorun="{dontDetach: true}">
       <div
-        [style.margin-top]="marginTop">
+        [style.margin-top]="marginTop" role="group">
         <tree-node
           *ngFor="let node of viewportNodes; let i = index; trackBy: trackNode"
           [node]="node"

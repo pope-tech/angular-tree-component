@@ -6,6 +6,7 @@ import { TreeNode } from '../models/tree-node.model';
   encapsulation: ViewEncapsulation.None,
   template: `
   <span *ngIf="!template">{{ node.displayField }}</span>
+  <span *ngIf="node.hasChildren" class="sr-only">Expandable</span>
   <ng-container
     [ngTemplateOutlet]="template"
     [ngTemplateOutletContext]="{ $implicit: node, node: node, index: index }">

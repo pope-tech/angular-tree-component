@@ -362,6 +362,8 @@ export class TreeNode implements ITreeNode {
     }
     this.fireEvent({ eventName: TREE_EVENTS.focus, node: this });
 
+    document.getElementById('tree-node-' + this.id).focus();
+
     return this;
   }
 

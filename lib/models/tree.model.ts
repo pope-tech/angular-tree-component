@@ -226,7 +226,6 @@ export class TreeModel implements ITreeModel, OnDestroy {
   @action focusNextNode() {
     let previousNode = this.getFocusedNode();
     let nextNode = previousNode ? previousNode.findNextNode(true, true) : this.getFirstRoot(true);
-    console.log(nextNode);
     if (nextNode) nextNode.focus();
   }
 
